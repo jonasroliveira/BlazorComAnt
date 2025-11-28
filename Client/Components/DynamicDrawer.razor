@@ -1,0 +1,16 @@
+@using AntDesign
+
+<Drawer Closable="true" @bind-Visible="Visible" Placement="DrawerPlacement.Right" Title="@Title">
+
+    @if (Fields != null)
+    {
+        @foreach (var field in Fields)
+        {
+            <div class="mb-2">
+                <strong>@field.Key:</strong>
+                <span>@field.Value</span>
+            </div>
+        }
+    }
+    @ChildContent
+</Drawer>

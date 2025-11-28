@@ -1,0 +1,26 @@
+@page "/produtos"
+@using AntDesign
+@using Client.Components
+
+<PageTitle>Home</PageTitle>
+
+<h1 class="px-5 mb-5" style="color: rgb(170, 162, 162);">Produtos</h1>
+
+<div class="px-5 mt-5">
+
+    <Tooltip Placement="Placement.Top" Title=@("Produtos")>
+        <Button Type="ButtonType.Primary" @onclick="() => Visible = true">
+            Abrir Drawer Produtos
+        </Button>
+    </Tooltip>
+
+    <DynamicDrawer Title="Produtos" Fields="@produto" @bind-Visible="Visible">
+        <div class="mt-3">
+            <InputText class="form-control" placeholder="Observação" @bind-Value="inputValue" />
+        </div>
+        <div class="mt-3 text-end">
+            <Button Type="ButtonType.Primary">Salvar</Button>
+        </div>
+    </DynamicDrawer>
+
+</div>

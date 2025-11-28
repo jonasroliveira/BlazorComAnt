@@ -1,0 +1,33 @@
+//Projeto em Blazor com .NET Core 8 - WebAssembly com package AntDesign
+//conectado em API RESTful .NET Core 8 
+
+https://github.com/jonasroliveira/BlazorComAnt
+
+https://antblazor.com/en-US/components/overview
+
+https://learn.microsoft.com/pt-br/aspnet/core/blazor/?view=aspnetcore-8.0
+
+
+mkdir BlazorComAnt
+cd BlazorComAnt
+
+dotnet new webapi -n Server -f net8.0
+dotnet new blazorwasm -n Client -f net8.0
+dotnet new classlib -n Shared -f net8.0
+
+dotnet add Server reference Shared
+dotnet add Client reference Shared
+
+cd Server
+dotnet add package Microsoft.AspNetCore.Components.WebAssembly.Server
+
+cd Client
+dotnet add package AntDesign
+
+wwwroot
+<link href="_content/AntDesign/css/ant-design-blazor.css" rel="stylesheet" />
+<script src="_content/AntDesign/js/ant-design-blazor.js"></script>
+
+cd ..
+dotnet publish ./Client/Client.csproj -c Release
+dotnet run --project server

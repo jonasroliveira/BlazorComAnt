@@ -1,0 +1,19 @@
+﻿@page "/"
+@using AntDesign
+@using Client.Components
+
+<PageTitle>Home</PageTitle>
+
+<h1 class="px-5 mb-5" style="color: rgb(170, 162, 162);">Home</h1>
+
+<div class="px-5 mt-5">
+
+    <Tooltip Placement="Placement.Top" Title=@("Home")>
+        <Button Type="ButtonType.Primary" @onclick="() => Visible = true">
+            Abrir Drawer Home
+        </Button>
+    </Tooltip>
+
+    <DynamicDrawer Title="Home" Fields="@produto" @bind-Visible="Visible"></DynamicDrawer>
+
+</div>

@@ -1,4 +1,4 @@
-# 📌  .NET Core 8: Blazor WebAssembly com package AntDesign conectado em API RESTful
+# 📌  Arquitetura .NET 8: Blazor WebAssembly e AntDesign consumindo uma API RESTful.
 
 ## 🔧 Necessário
 

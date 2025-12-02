@@ -88,3 +88,4 @@ TestResults/
 *.pid.lock
 
 *.git_private
+*.git_public

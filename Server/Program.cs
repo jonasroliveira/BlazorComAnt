@@ -1,8 +1,12 @@
 //Jonas da Rosa Oliveira
-//18/11/2025
 //https://www.linkedin.com/in/jonas-da-rosa-oliveira
 
+using Server.Services;
+using Shared.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<IProdutosService, ProdutosService>();
 
 builder.Services.AddHttpClient();
 

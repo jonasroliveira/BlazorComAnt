@@ -10,7 +10,7 @@ using Client.Services;
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5167/") });
-builder.Services.AddScoped<IProdutosService, ProdutosService>();
+builder.Services.AddScoped<IProdutoService, ProdutoService>();
 
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");

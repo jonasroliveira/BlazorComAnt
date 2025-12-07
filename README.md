@@ -1,4 +1,4 @@
-# 📌  Arquitetura .NET 8: Blazor WebAssembly e AntDesign consumindo uma API RESTful.
+# 📌  .NET Core 8: Blazor WebAssembly com package AntDesign conectado em API RESTful
 
 ## 🔧 Necessário
 
@@ -10,5 +10,7 @@ https://antblazor.com/en-US/components/overview
 
 
 ### 🚀 Run localhost
-
 https://github.com/jonasroliveira/BlazorComAnt/blob/main/Comandos.txt
+
+### 🎯 Linkedin
+https://www.linkedin.com/in/jonas-da-rosa-oliveira/

@@ -6,7 +6,7 @@ using Shared.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<IProdutosService, ProdutosService>();
+builder.Services.AddScoped<IProdutoService, ProdutoService>();
 
 builder.Services.AddHttpClient();
 

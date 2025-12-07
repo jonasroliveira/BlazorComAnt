@@ -7,7 +7,7 @@
 <h1 class="px-5 mb-5" style="color: rgb(170, 162, 162);">Produtos</h1>
 
 <div class="mt-1">
-    <table class="table">
+    <table class="table table-striped">
         <thead class="thead-light">
             <tr>
                 <th scope="col">Id</th>
@@ -35,8 +35,9 @@
 </div>
 <div>
     <DynamicDrawer Title="Produtos" Fields="@produto" @bind-Visible="visibleDrawer">
-        <div class="mt-3">
-            <InputText class="form-control" placeholder="Observação" @bind-Value="inputValueObs" />
+        <div class="form-floating mt-3">
+            <InputText type="text" class="form-control" id="floatingInput" placeholder="Alterar obs." @bind-Value="inputValueObs" />
+            <label for="floatingInput">Alterar obs.</label>
         </div>
         <div class="mt-3 text-end">
             <Button Type="ButtonType.Primary" @onclick="() => SalvarObsAsync()">Salvar</Button>

@@ -12,17 +12,17 @@ public partial class Produtos
 
     private Dictionary<string, object> produto = new();
 
-    private List<ProdutosDto> produtos = new();
+    private List<ProdutoDto> produtos = new();
 
     [Inject]
-    private IProdutosService iProdutosService { get; set; } = null!;
+    private IProdutoService iProdutosService { get; set; } = null!;
 
     override protected async Task OnInitializedAsync()
     {
         try
         {
             spinner = true;
-            produtos = await iProdutosService.GetProdutosAsync();
+            produtos = await iProdutosService.GetProdutosAsync();            
         }
         catch (Exception ex)
         {
@@ -35,7 +35,7 @@ public partial class Produtos
         }
     }
 
-    private void SelecionouTableID(ProdutosDto proDto)
+    private void SelecionouTableID(ProdutoDto proDto)
     {
         produto.Clear();
         inputValueObs = string.Empty;
@@ -46,6 +46,8 @@ public partial class Produtos
         produto.Add("Valor", proDto.Valor);
         produto.Add("Obs.", proDto.Obs);
 
+        inputValueObs = proDto.Obs;
+
         visibleDrawer = true;
     }
 
@@ -53,7 +55,7 @@ public partial class Produtos
     {
         try
         {
-            var dto = new ProdutosDto
+            var dto = new ProdutoDto
             {
                 Id = (int)produto["Id"],
                 Produto = (string)produto["Produto"],
@@ -62,9 +64,7 @@ public partial class Produtos
                 Obs = inputValueObs
             };
 
-            produtos.First(p => p.Id == dto.Id).Obs = inputValueObs;
-
-            //await iProdutosService.PutProdutosAsync(dto);
+            await iProdutosService.PutProdutosAsync(dto);
         }
         catch (Exception ex)
         {
@@ -72,6 +72,7 @@ public partial class Produtos
         }
         finally
         {
+            await OnInitializedAsync();
             visibleDrawer = false;
             StateHasChanged();
         }
